@@ -8,12 +8,19 @@ spring:
     name: gallery-backend
   data:
     mongodb:
+      # 로컬: mongodb://localhost:27017/gallery
+      # Atlas: MONGODB_URI 환경 변수에 connection string 설정 (비밀번호는 저장소에 올리지 말 것)
       uri: ${MONGODB_URI:mongodb://localhost:27017/gallery}
   servlet:
     multipart:
       enabled: true
       max-file-size: 50MB
       max-request-size: 100MB
+  # 로그인은 JWT 사용. 아래는 Spring 기본 사용자 생성 방지용 (콘솔 메시지 제거)
+  security:
+    user:
+      name: user
+      password: dev
 
 # 갤러리 사진 저장 경로 (외장 SSD 드라이브 경로로 변경하세요, 예: D:\gallery-photos)
 gallery:
