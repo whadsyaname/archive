@@ -10,8 +10,8 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# 실행 이미지
-FROM eclipse-temurin:17-jre-alpine
+# 실행 이미지 (Debian 기반 - Alpine의 SSL 문제 회피)
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # 빌드된 JAR 복사
