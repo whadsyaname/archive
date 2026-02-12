@@ -1,8 +1,23 @@
 import { getToken } from './auth'
 
 // 개발: Vite 프록시로 /api → localhost:8080
-// 프로덕션(Vercel): VITE_API_URL 환경 변수에 Render 백엔드 URL 지정
-const API_BASE = import.meta.env.VITE_API_URL || '/api'
+// 프로덕션(Vercel): VITE_API_URL 환경 변수 또는 자동 감지
+function getApiBase() {
+  // 환경 변수 우선
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL
+  }
+  
+  // Vercel 배포 감지 (vercel.app 도메인)
+  if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) {
+    return 'https://archive-ig7i.onrender.com/api'
+  }
+  
+  // 로컬 개발
+  return '/api'
+}
+
+const API_BASE = getApiBase()
 
 function authHeaders() {
   const token = getToken()
