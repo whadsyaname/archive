@@ -1,6 +1,8 @@
 import { getToken } from './auth'
 
-const API_BASE = '/api'
+// 개발: Vite 프록시로 /api → localhost:8080
+// 프로덕션(Vercel): VITE_API_URL 환경 변수에 Render 백엔드 URL 지정
+const API_BASE = import.meta.env.VITE_API_URL || '/api'
 
 function authHeaders() {
   const token = getToken()
