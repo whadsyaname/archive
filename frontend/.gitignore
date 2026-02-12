@@ -1,0 +1,22 @@
+# --- Frontend (React) ---
+node_modules/
+dist/
+build/
+.env
+.env.local
+npm-debug.log*
+
+# --- Backend (Java/Spring) ---
+target/
+build/
+.gradle/
+bin/
+*.class
+*.jar
+*.war
+
+# --- IDE & OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

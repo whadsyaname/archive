@@ -1,0 +1,76 @@
+.dday-widget-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.dday-widget-loading {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.dday-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.dday-widget-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.dday-widget-manage {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.dday-widget-manage:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.dday-widget-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dday-widget-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.dday-widget-name {
+  color: var(--text);
+}
+
+.dday-widget-badge {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.dday-widget-badge.today {
+  color: var(--error);
+}
+
+.dday-widget-badge.past {
+  color: var(--text-muted);
+}

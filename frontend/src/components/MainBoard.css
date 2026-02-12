@@ -1,0 +1,62 @@
+.main-board {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-board-hero {
+  margin-bottom: 2.5rem;
+}
+
+.main-board-hero h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-board-welcome {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.main-board-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.main-board-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.main-board-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: inherit;
+  transition: border-color 0.2s;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.main-board-card:hover {
+  border-color: var(--accent);
+}
+
+.main-board-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main-board-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

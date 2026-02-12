@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  # 외부 접속 허용 (모든 인터페이스에서 수신)
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: gallery-backend
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/gallery}
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 100MB
+
+# 갤러리 사진 저장 경로 (외장 SSD 드라이브 경로로 변경하세요, 예: D:\gallery-photos)
+gallery:
+  storage:
+    path: ${GALLERY_STORAGE_PATH:./gallery-storage}
+  jwt:
+    secret: ${JWT_SECRET:change-me-in-production-use-long-random-string-at-least-256-bits}
+    expiration-ms: 86400000  # 24시간
+  # 재미나이(Google Gemini) API 키. 설정 시 Conversation에서 실제 대화 가능
+  conversation:
+    api-key: ${JAEMINAI_API_KEY:AIzaSyBjdlPff2EK5ofdQj-eoi55GHmoOi1PVhE}

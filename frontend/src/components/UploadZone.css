@@ -1,0 +1,52 @@
+.upload-zone {
+  margin-bottom: 2rem;
+}
+
+.drop-area {
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.drop-area:hover {
+  border-color: var(--accent);
+  background: rgba(201, 162, 39, 0.06);
+}
+
+.drop-area.dragging {
+  border-color: var(--accent);
+  background: rgba(201, 162, 39, 0.12);
+}
+
+.drop-area.uploading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.drop-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.drop-area:hover .drop-text,
+.drop-area.dragging .drop-text {
+  color: var(--accent);
+}
+
+.upload-error {
+  margin: 0.75rem 0 0;
+  color: var(--error);
+  font-size: 0.9rem;
+}
