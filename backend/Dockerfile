@@ -14,8 +14,17 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 
+# Python 설치 (MCP 서버용)
+RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
+
 # 빌드된 JAR 복사
 COPY --from=build /app/target/*.jar app.jar
+
+# MCP 서버 복사 (backend/mcp-server)
+COPY mcp-server /app/mcp-server
+
+# Python 의존성 설치
+RUN cd /app/mcp-server && pip3 install --break-system-packages -r requirements.txt
 
 # 포트 노출
 EXPOSE 8080
@@ -24,7 +33,7 @@ EXPOSE 8080
 ENV MONGODB_URI=""
 ENV JWT_SECRET=""
 ENV GALLERY_STORAGE_PATH="/app/gallery-storage"
-ENV JAEMINAI_API_KEY=""
+ENV GEMINI_API_KEY=""
 
 # 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
