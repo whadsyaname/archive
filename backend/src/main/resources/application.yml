@@ -31,4 +31,4 @@ gallery:
     expiration-ms: 86400000  # 24시간
   # 재미나이(Google Gemini) API 키. 설정 시 Conversation에서 실제 대화 가능
   conversation:
-    api-key: ${JAEMINAI_API_KEY:AIzaSyBjdlPff2EK5ofdQj-eoi55GHmoOi1PVhE}
+    api-key: ${JAEMINAI_API_KEY:}
